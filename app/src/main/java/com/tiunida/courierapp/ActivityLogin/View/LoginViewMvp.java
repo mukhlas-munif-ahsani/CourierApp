@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityLogin.ui;
+package com.tiunida.courierapp.ActivityLogin.View;
 
 public interface LoginViewMvp {
     void showProgress();

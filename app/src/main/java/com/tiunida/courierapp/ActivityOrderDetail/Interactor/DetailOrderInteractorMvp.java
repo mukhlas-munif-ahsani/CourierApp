@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityOrderDetail;
+package com.tiunida.courierapp.ActivityOrderDetail.Interactor;
 
 public interface DetailOrderInteractorMvp {
     void getOrdersData(String order_id);

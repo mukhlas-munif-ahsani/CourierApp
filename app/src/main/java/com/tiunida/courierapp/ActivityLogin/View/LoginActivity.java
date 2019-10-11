@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityLogin.ui;
+package com.tiunida.courierapp.ActivityLogin.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.tiunida.courierapp.ActivityLogin.LoginPresenter;
-import com.tiunida.courierapp.ActivityLogin.LoginPresenterMvp;
+import com.tiunida.courierapp.ActivityLogin.Presenter.LoginPresenter;
+import com.tiunida.courierapp.ActivityLogin.Presenter.LoginPresenterMvp;
 import com.tiunida.courierapp.ActivityMain.MainActivity;
 import com.tiunida.courierapp.R;
 

@@ -7,8 +7,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentKilat.KilatFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/putih"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/kilat"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/hitam" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/appBar"
         android:id="@+id/order_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>

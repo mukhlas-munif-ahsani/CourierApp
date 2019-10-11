@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/biruMuda"
     android:orientation="vertical"
-    tools:context=".ActivityOrderDetail.ui.DetailOrderActivity">
+    tools:context=".ActivityOrderDetail.View.DetailOrderActivity">
 
     <ProgressBar
         android:id="@+id/order_detail_progress"

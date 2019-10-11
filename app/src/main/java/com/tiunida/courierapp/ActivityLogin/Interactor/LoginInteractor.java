@@ -1,4 +1,7 @@
-package com.tiunida.courierapp.ActivityLogin;
+package com.tiunida.courierapp.ActivityLogin.Interactor;
+
+import com.tiunida.courierapp.ActivityLogin.Model.LoginRepository;
+import com.tiunida.courierapp.ActivityLogin.Model.LoginRepositoryMvp;
 
 public class LoginInteractor implements LoginInteractorMvp {
 

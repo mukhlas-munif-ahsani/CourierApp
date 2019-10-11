@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityLogin;
+package com.tiunida.courierapp.ActivityLogin.Model;
 
 import androidx.annotation.NonNull;
 

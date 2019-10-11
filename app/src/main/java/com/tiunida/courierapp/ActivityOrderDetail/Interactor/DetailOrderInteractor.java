@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityOrderDetail;
+package com.tiunida.courierapp.ActivityOrderDetail.Interactor;
 
 import com.tiunida.courierapp.ActivityOrderDetail.Model.DetailOrderRepository;
 import com.tiunida.courierapp.ActivityOrderDetail.Model.DetailOrderRepositoryMvp;

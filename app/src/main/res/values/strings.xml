@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CourierApp</string>
+    <string name="app_name">Kurir U3</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -41,6 +41,7 @@
     <string name="detail_pesanan">Detail Pesanan</string>
     <string name="tiga_titik">...</string>
     <string name="tulis_catatan">Tulis Catatan</string>
+    <string name="logout">logout</string>
 
     <integer name="btn_plus_view">1</integer>
     <integer name="btn_plus_pos">2</integer>

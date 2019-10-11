@@ -10,4 +10,5 @@ public interface DetailOrderPresenterMvp {
     void validateUpdateDone(String order_id);
     void validateUpdatePaid(String order_id);
     void validateUpdateDeliver(String order_id);
+
 }

@@ -10,11 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.tiunida.courierapp.R;
 
 
 public class ProfileFragment extends Fragment {
-
+    private FirebaseAuth mAuth;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityLogin;
+package com.tiunida.courierapp.ActivityLogin.Presenter;
 
 import com.tiunida.courierapp.ActivityLogin.events.LoginEvents;
 

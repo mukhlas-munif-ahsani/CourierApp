@@ -1,7 +1,9 @@
-package com.tiunida.courierapp.ActivityLogin;
+package com.tiunida.courierapp.ActivityLogin.Presenter;
 
+import com.tiunida.courierapp.ActivityLogin.Interactor.LoginInteractor;
+import com.tiunida.courierapp.ActivityLogin.Interactor.LoginInteractorMvp;
 import com.tiunida.courierapp.ActivityLogin.events.LoginEvents;
-import com.tiunida.courierapp.ActivityLogin.ui.LoginViewMvp;
+import com.tiunida.courierapp.ActivityLogin.View.LoginViewMvp;
 import com.tiunida.courierapp.EventBus.EventBus;
 import com.tiunida.courierapp.EventBus.GreenRobotEventBus;
 

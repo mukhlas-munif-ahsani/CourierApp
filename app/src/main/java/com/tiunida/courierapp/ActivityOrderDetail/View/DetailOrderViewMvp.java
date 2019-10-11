@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityOrderDetail.ui;
+package com.tiunida.courierapp.ActivityOrderDetail.View;
 
 public interface DetailOrderViewMvp {
     void setNoLaundry(String txt);

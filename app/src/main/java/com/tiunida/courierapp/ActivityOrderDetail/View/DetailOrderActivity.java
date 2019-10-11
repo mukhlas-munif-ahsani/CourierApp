@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityOrderDetail.ui;
+package com.tiunida.courierapp.ActivityOrderDetail.View;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -117,7 +117,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         Intent orderDetailIntent = getIntent();
         order_id = orderDetailIntent.getStringExtra("id");
 
-        Toast.makeText(DetailOrderActivity.this, "order id " + order_id, Toast.LENGTH_LONG).show();
+        //Toast.makeText(DetailOrderActivity.this, "order id " + order_id, Toast.LENGTH_LONG).show();
 
         setSupportActionBar(mDetailOrderToolbar);
 
@@ -156,6 +156,8 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
             }
         });
 
+        mNoOrderTxt.setText(order_id);
+
         getData();
     }
 
@@ -166,7 +168,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         number = "62" + number.substring(1);
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.setType("text/plain");
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum");
         sendIntent.putExtra("jid", number + "@s.whatsapp.net"); //phone number without "+" prefix
         sendIntent.setPackage("com.whatsapp");
 //        if (intent.resolveActivity(getActivity().getPackageManager()) == null) {
@@ -432,12 +434,12 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Yakin udah diambil ?");
+        alertDialogBuilder.setTitle("Apakah antum yakin pakaian sudah diambil ?");
 
         // set pesan dari dialog
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("Saip udah", new DialogInterface.OnClickListener() {
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol diklik, maka akan menutup activity ini
                         mDetailOrderPresenterMvp.validateUpdateAccept(order_id);
@@ -445,7 +447,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
 
                     }
                 })
-                .setNegativeButton("Eh iya belum", new DialogInterface.OnClickListener() {
+                .setNegativeButton("tidak", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol ini diklik, akan menutup dialog
                         // dan tidak terjadi apa2
@@ -465,12 +467,12 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Yakin angkanya bener ?");
+        alertDialogBuilder.setTitle("Apakah antun yakin angka yang dimasukan benar ?");
 
         // set pesan dari dialog
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("Siap yakin", new DialogInterface.OnClickListener() {
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol diklik, maka akan menutup activity ini
                         mDetailOrderPresenterMvp.validateUpdateWeight(order_id, mInputWeightEdt.getText().toString());
@@ -478,7 +480,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
 
                     }
                 })
-                .setNegativeButton("Hmmm", new DialogInterface.OnClickListener() {
+                .setNegativeButton("tidak", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol ini diklik, akan menutup dialog
                         // dan tidak terjadi apa2
@@ -498,12 +500,12 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Yakin udah selesai semua ?");
+        alertDialogBuilder.setTitle("Apakah antum yakin pakaian telah selesai diporse ?");
 
         // set pesan dari dialog
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("Siap udah", new DialogInterface.OnClickListener() {
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol diklik, maka akan menutup activity ini
                         mDetailOrderPresenterMvp.validateUpdateDone(order_id);
@@ -511,7 +513,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
 
                     }
                 })
-                .setNegativeButton("Eh iya belum", new DialogInterface.OnClickListener() {
+                .setNegativeButton("tidak", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol ini diklik, akan menutup dialog
                         // dan tidak terjadi apa2
@@ -531,12 +533,12 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Yakin udah dibayar lunas ?");
+        alertDialogBuilder.setTitle("Apakah antum yakin laudnry sudah dibayar ?");
 
         // set pesan dari dialog
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("Siap udah", new DialogInterface.OnClickListener() {
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol diklik, maka akan menutup activity ini
                         mDetailOrderPresenterMvp.validateUpdatePaid(order_id);
@@ -544,7 +546,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
 
                     }
                 })
-                .setNegativeButton("Eh iya belum", new DialogInterface.OnClickListener() {
+                .setNegativeButton("tidak", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol ini diklik, akan menutup dialog
                         // dan tidak terjadi apa2
@@ -564,12 +566,12 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Yakin udah dianter sampe tujuan ?");
+        alertDialogBuilder.setTitle("Apakah antum yakin pakaian telah sampai tujuan ?");
 
         // set pesan dari dialog
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("Siap udah", new DialogInterface.OnClickListener() {
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol diklik, maka akan menutup activity ini
                         mDetailOrderPresenterMvp.validateUpdateDeliver(order_id);
@@ -577,7 +579,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
 
                     }
                 })
-                .setNegativeButton("Eh iya belum", new DialogInterface.OnClickListener() {
+                .setNegativeButton("ya", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol ini diklik, akan menutup dialog
                         // dan tidak terjadi apa2

@@ -2,10 +2,10 @@ package com.tiunida.courierapp.ActivityOrderDetail.Presenter;
 
 import android.util.Log;
 
-import com.tiunida.courierapp.ActivityOrderDetail.DetailOrderInteractor;
-import com.tiunida.courierapp.ActivityOrderDetail.DetailOrderInteractorMvp;
+import com.tiunida.courierapp.ActivityOrderDetail.Interactor.DetailOrderInteractor;
+import com.tiunida.courierapp.ActivityOrderDetail.Interactor.DetailOrderInteractorMvp;
 import com.tiunida.courierapp.ActivityOrderDetail.events.DetailOrderEvents;
-import com.tiunida.courierapp.ActivityOrderDetail.ui.DetailOrderViewMvp;
+import com.tiunida.courierapp.ActivityOrderDetail.View.DetailOrderViewMvp;
 import com.tiunida.courierapp.EventBus.EventBus;
 import com.tiunida.courierapp.EventBus.GreenRobotEventBus;
 

@@ -20,7 +20,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.tiunida.courierapp.ActivityOrderDetail.ui.DetailOrderActivity;
+import com.tiunida.courierapp.ActivityOrderDetail.View.DetailOrderActivity;
 import com.tiunida.courierapp.FragmentBiasa.Adapter.BiasaAdapter;
 import com.tiunida.courierapp.FragmentBiasa.Model.BiasaModel;
 import com.tiunida.courierapp.R;

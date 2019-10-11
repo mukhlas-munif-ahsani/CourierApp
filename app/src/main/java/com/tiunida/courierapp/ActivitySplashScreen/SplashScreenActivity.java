@@ -1,20 +1,15 @@
 package com.tiunida.courierapp.ActivitySplashScreen;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.tiunida.courierapp.ActivityLogin.ui.LoginActivity;
+import com.tiunida.courierapp.ActivityLogin.View.LoginActivity;
 import com.tiunida.courierapp.ActivityMain.MainActivity;
 import com.tiunida.courierapp.R;
 

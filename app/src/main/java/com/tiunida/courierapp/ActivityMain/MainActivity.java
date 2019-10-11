@@ -1,9 +1,11 @@
 package com.tiunida.courierapp.ActivityMain;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,11 +18,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.tiunida.courierapp.ActivityLogin.ui.LoginActivity;
+import com.tiunida.courierapp.ActivityLogin.View.LoginActivity;
 import com.tiunida.courierapp.FragmentBiasa.BiasaFragment;
 import com.tiunida.courierapp.FragmentExpress.ExpressFragment;
 import com.tiunida.courierapp.FragmentKilat.KilatFragment;
-import com.tiunida.courierapp.FragmentProfile.ProfileFragment;
 import com.tiunida.courierapp.R;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
                     if (task.getResult().exists()) {
                         name = task.getResult().getString("user_level");
-                        if (name.equals("1")){
+                        if (name.equals("1")) {
                             sendToLogin();
                             showMessage("Maaf akun ini hanya dapat digunakan oleh pelanggan");
                         }
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new KilatFragment();
                 break;
             case R.id.navigation_profile:
-                fragment = new ProfileFragment();
+                showDialogOnLogoutBtnOnClick();
                 break;
         }
         return loadFragment(fragment);
@@ -114,8 +115,39 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         finish();
     }
 
+    public void showDialogOnLogoutBtnOnClick() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-    public void showMessage(String message){
+        // set title dialog
+        alertDialogBuilder.setTitle("Apakah antum yakin ingin LogOut dari aplikasi ini ?");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("ya", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // jika tombol diklik, maka akan menutup activity ini
+                        mAuth.signOut();
+                        sendToLogin();
+                    }
+                })
+                .setNegativeButton("tidak", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // jika tombol ini diklik, akan menutup dialog
+                        // dan tidak terjadi apa2
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+
+    }
+
+    public void showMessage(String message) {
         Toast.makeText(MainActivity.this, "Error : " + message, Toast.LENGTH_LONG).show();
 
     }
