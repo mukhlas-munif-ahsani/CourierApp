@@ -1,7 +1,7 @@
 package com.tiunida.courierapp.FragmentExpress.Model;
 
 public class ExpressModel {
-    private String a_time, a_waktu_selesai;
+    private String a_time, a_weight, a_waktu_selesai;
     private String h_accepted2, h_delivered2, h_delivered2Confirm, h_done2, h_on_proses2, h_paid2, h_paid2Confirm, a_price2, a_diskon, a_jenis;
     private String a_name, a_dormitory, a_room, a_phone_number, a_status, a_gender;
 
@@ -9,8 +9,9 @@ public class ExpressModel {
 
     }
 
-    public ExpressModel(String a_time, String a_waktu_selesai, String h_accepted2, String h_delivered2, String h_delivered2Confirm, String h_done2, String h_on_proses2, String h_paid2, String h_paid2Confirm, String a_price2, String a_diskon, String a_jenis, String a_name, String a_dormitory, String a_room, String a_phone_number, String a_status, String a_gender) {
+    public ExpressModel(String a_time, String a_weight, String a_waktu_selesai, String h_accepted2, String h_delivered2, String h_delivered2Confirm, String h_done2, String h_on_proses2, String h_paid2, String h_paid2Confirm, String a_price2, String a_diskon, String a_jenis, String a_name, String a_dormitory, String a_room, String a_phone_number, String a_status, String a_gender) {
         this.a_time = a_time;
+        this.a_weight = a_weight;
         this.a_waktu_selesai = a_waktu_selesai;
         this.h_accepted2 = h_accepted2;
         this.h_delivered2 = h_delivered2;
@@ -28,6 +29,10 @@ public class ExpressModel {
         this.a_phone_number = a_phone_number;
         this.a_status = a_status;
         this.a_gender = a_gender;
+    }
+
+    public String getA_weight() {
+        return a_weight;
     }
 
     public String getH_delivered2Confirm() {

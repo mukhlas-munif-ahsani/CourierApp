@@ -168,7 +168,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         number = "62" + number.substring(1);
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.setType("text/plain");
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum...");
         sendIntent.putExtra("jid", number + "@s.whatsapp.net"); //phone number without "+" prefix
         sendIntent.setPackage("com.whatsapp");
 //        if (intent.resolveActivity(getActivity().getPackageManager()) == null) {
@@ -434,7 +434,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Apakah antum yakin pakaian sudah diambil ?");
+        alertDialogBuilder.setTitle("Apakah anda yakin pakaian sudah diambil ?");
 
         // set pesan dari dialog
         alertDialogBuilder
@@ -467,7 +467,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Apakah antun yakin angka yang dimasukan benar ?");
+        alertDialogBuilder.setTitle("Apakah anda yakin angka yang dimasukan benar ?");
 
         // set pesan dari dialog
         alertDialogBuilder
@@ -500,7 +500,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Apakah antum yakin pakaian telah selesai diporse ?");
+        alertDialogBuilder.setTitle("Apakah anda yakin pakaian telah selesai diporse ?");
 
         // set pesan dari dialog
         alertDialogBuilder
@@ -533,7 +533,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Apakah antum yakin laudnry sudah dibayar ?");
+        alertDialogBuilder.setTitle("Apakah anda yakin laudnry sudah dibayar ?");
 
         // set pesan dari dialog
         alertDialogBuilder
@@ -566,7 +566,7 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Apakah antum yakin pakaian telah sampai tujuan ?");
+        alertDialogBuilder.setTitle("Apakah anda yakin pakaian telah sampai tujuan ?");
 
         // set pesan dari dialog
         alertDialogBuilder

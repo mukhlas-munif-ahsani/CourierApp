@@ -15,6 +15,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.tiunida.courierapp.FragmentBiasa.Model.BiasaModel;
 import com.tiunida.courierapp.R;
 
+import java.text.DecimalFormat;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -84,6 +86,288 @@ public class BiasaAdapter extends FirestoreRecyclerAdapter<BiasaModel, BiasaAdap
         } else {
             orderHolder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_border);
         }
+
+        switch (model.getA_weight()) {
+            case "1":
+                orderHolder.mPrice.setText(setTotalPrice(3500, model.getA_diskon()));
+                break;
+            case "1.1":
+                orderHolder.mPrice.setText(setTotalPrice(3850, model.getA_diskon()));
+                break;
+            case "1.2":
+                orderHolder.mPrice.setText(setTotalPrice(4200, model.getA_diskon()));
+                break;
+            case "1.3":
+                orderHolder.mPrice.setText(setTotalPrice(4550, model.getA_diskon()));
+                break;
+            case "1.4":
+                orderHolder.mPrice.setText(setTotalPrice(4900, model.getA_diskon()));
+                break;
+            case "1.5":
+                orderHolder.mPrice.setText(setTotalPrice(5250, model.getA_diskon()));
+                break;
+            case "1.6":
+                orderHolder.mPrice.setText(setTotalPrice(5600, model.getA_diskon()));
+                break;
+            case "1.7":
+                orderHolder.mPrice.setText(setTotalPrice(5950, model.getA_diskon()));
+                break;
+            case "1.8":
+                orderHolder.mPrice.setText(setTotalPrice(6300, model.getA_diskon()));
+                break;
+            case "1.9":
+                orderHolder.mPrice.setText(setTotalPrice(6650, model.getA_diskon()));
+                break;
+            //-2---------------
+            case "2":
+                orderHolder.mPrice.setText(setTotalPrice(7000, model.getA_diskon()));
+                break;
+            case "2.1":
+                orderHolder.mPrice.setText(setTotalPrice(7350, model.getA_diskon()));
+                break;
+            case "2.2":
+                orderHolder.mPrice.setText(setTotalPrice(7700, model.getA_diskon()));
+                break;
+            case "2.3":
+                orderHolder.mPrice.setText(setTotalPrice(8050, model.getA_diskon()));
+                break;
+            case "2.4":
+                orderHolder.mPrice.setText(setTotalPrice(8400, model.getA_diskon()));
+                break;
+            case "2.5":
+                orderHolder.mPrice.setText(setTotalPrice(8750, model.getA_diskon()));
+                break;
+            case "2.6":
+                orderHolder.mPrice.setText(setTotalPrice(9100, model.getA_diskon()));
+                break;
+            case "2.7":
+                orderHolder.mPrice.setText(setTotalPrice(9450, model.getA_diskon()));
+                break;
+            case "2.8":
+                orderHolder.mPrice.setText(setTotalPrice(9800, model.getA_diskon()));
+                break;
+            case "2.9":
+                orderHolder.mPrice.setText(setTotalPrice(10150, model.getA_diskon()));
+                break;
+            //-3---------------
+            case "3":
+                orderHolder.mPrice.setText(setTotalPrice(10500, model.getA_diskon()));
+                break;
+            case "3.1":
+                orderHolder.mPrice.setText(setTotalPrice(10850, model.getA_diskon()));
+                break;
+            case "3.2":
+                orderHolder.mPrice.setText(setTotalPrice(3500, model.getA_diskon()));
+                break;
+            case "3.3":
+                orderHolder.mPrice.setText(setTotalPrice(11200, model.getA_diskon()));
+                break;
+            case "3.4":
+                orderHolder.mPrice.setText(setTotalPrice(11550, model.getA_diskon()));
+                break;
+            case "3.5":
+                orderHolder.mPrice.setText(setTotalPrice(11900, model.getA_diskon()));
+                break;
+            case "3.6":
+                orderHolder.mPrice.setText(setTotalPrice(12250, model.getA_diskon()));
+                break;
+            case "3.7":
+                orderHolder.mPrice.setText(setTotalPrice(12600, model.getA_diskon()));
+                break;
+            case "3.8":
+                orderHolder.mPrice.setText(setTotalPrice(12950, model.getA_diskon()));
+                break;
+            case "3.9":
+                orderHolder.mPrice.setText(setTotalPrice(13300, model.getA_diskon()));
+                break;
+            //-4---------------
+            case "4":
+                orderHolder.mPrice.setText(setTotalPrice(13650, model.getA_diskon()));
+                break;
+            case "4.1":
+                orderHolder.mPrice.setText(setTotalPrice(14000, model.getA_diskon()));
+                break;
+            case "4.2":
+                orderHolder.mPrice.setText(setTotalPrice(14350, model.getA_diskon()));
+                break;
+            case "4.3":
+                orderHolder.mPrice.setText(setTotalPrice(14700, model.getA_diskon()));
+                break;
+            case "4.4":
+                orderHolder.mPrice.setText(setTotalPrice(15050, model.getA_diskon()));
+                break;
+            case "4.5":
+                orderHolder.mPrice.setText(setTotalPrice(15400, model.getA_diskon()));
+                break;
+            case "4.6":
+                orderHolder.mPrice.setText(setTotalPrice(15750, model.getA_diskon()));
+                break;
+            case "4.7":
+                orderHolder.mPrice.setText(setTotalPrice(16100, model.getA_diskon()));
+                break;
+            case "4.8":
+                orderHolder.mPrice.setText(setTotalPrice(16450, model.getA_diskon()));
+                break;
+            case "4.9":
+                orderHolder.mPrice.setText(setTotalPrice(16800, model.getA_diskon()));
+                break;
+            //-5---------------
+            case "5":
+                orderHolder.mPrice.setText(setTotalPrice(17150, model.getA_diskon()));
+                break;
+            case "5.1":
+                orderHolder.mPrice.setText(setTotalPrice(17500, model.getA_diskon()));
+                break;
+            case "5.2":
+                orderHolder.mPrice.setText(setTotalPrice(17850, model.getA_diskon()));
+                break;
+            case "5.3":
+                orderHolder.mPrice.setText(setTotalPrice(18200, model.getA_diskon()));
+                break;
+            case "5.4":
+                orderHolder.mPrice.setText(setTotalPrice(18550, model.getA_diskon()));
+                break;
+            case "5.5":
+                orderHolder.mPrice.setText(setTotalPrice(18900, model.getA_diskon()));
+                break;
+            case "5.6":
+                orderHolder.mPrice.setText(setTotalPrice(19250, model.getA_diskon()));
+                break;
+            case "5.7":
+                orderHolder.mPrice.setText(setTotalPrice(19600, model.getA_diskon()));
+                break;
+            case "5.8":
+                orderHolder.mPrice.setText(setTotalPrice(19950, model.getA_diskon()));
+                break;
+            case "5.9":
+                orderHolder.mPrice.setText(setTotalPrice(20300, model.getA_diskon()));
+                break;
+            //-6---------------
+            case "6":
+                orderHolder.mPrice.setText(setTotalPrice(20650, model.getA_diskon()));
+                break;
+            case "6.1":
+                orderHolder.mPrice.setText(setTotalPrice(21000, model.getA_diskon()));
+                break;
+            case "6.2":
+                orderHolder.mPrice.setText(setTotalPrice(21350, model.getA_diskon()));
+                break;
+            case "6.3":
+                orderHolder.mPrice.setText(setTotalPrice(21700, model.getA_diskon()));
+                break;
+            case "6.4":
+                orderHolder.mPrice.setText(setTotalPrice(22050, model.getA_diskon()));
+                break;
+            case "6.5":
+                orderHolder.mPrice.setText(setTotalPrice(22400, model.getA_diskon()));
+                break;
+            case "6.6":
+                orderHolder.mPrice.setText(setTotalPrice(22750, model.getA_diskon()));
+                break;
+            case "6.7":
+                orderHolder.mPrice.setText(setTotalPrice(23100, model.getA_diskon()));
+                break;
+            case "6.8":
+                orderHolder.mPrice.setText(setTotalPrice(23450, model.getA_diskon()));
+                break;
+            case "6.9":
+                orderHolder.mPrice.setText(setTotalPrice(23800, model.getA_diskon()));
+                break;
+            //-7---------------
+            case "7":
+                orderHolder.mPrice.setText(setTotalPrice(24150, model.getA_diskon()));
+                break;
+            case "7.1":
+                orderHolder.mPrice.setText(setTotalPrice(24500, model.getA_diskon()));
+                break;
+            case "7.2":
+                orderHolder.mPrice.setText(setTotalPrice(24850, model.getA_diskon()));
+                break;
+            case "7.3":
+                orderHolder.mPrice.setText(setTotalPrice(25200, model.getA_diskon()));
+                break;
+            case "7.4":
+                orderHolder.mPrice.setText(setTotalPrice(25550, model.getA_diskon()));
+                break;
+            case "7.5":
+                orderHolder.mPrice.setText(setTotalPrice(25900, model.getA_diskon()));
+                break;
+            case "7.6":
+                orderHolder.mPrice.setText(setTotalPrice(26250, model.getA_diskon()));
+                break;
+            case "7.7":
+                orderHolder.mPrice.setText(setTotalPrice(26600, model.getA_diskon()));
+                break;
+            case "7.8":
+                orderHolder.mPrice.setText(setTotalPrice(26950, model.getA_diskon()));
+                break;
+            case "7.9":
+                orderHolder.mPrice.setText(setTotalPrice(27300, model.getA_diskon()));
+                break;
+            //-8---------------
+            case "8":
+                orderHolder.mPrice.setText(setTotalPrice(27650, model.getA_diskon()));
+                break;
+            case "8.1":
+                orderHolder.mPrice.setText(setTotalPrice(28000, model.getA_diskon()));
+                break;
+            case "8.2":
+                orderHolder.mPrice.setText(setTotalPrice(28350, model.getA_diskon()));
+                break;
+            case "8.3":
+                orderHolder.mPrice.setText(setTotalPrice(28700, model.getA_diskon()));
+                break;
+            case "8.4":
+                orderHolder.mPrice.setText(setTotalPrice(29050, model.getA_diskon()));
+                break;
+            case "8.5":
+                orderHolder.mPrice.setText(setTotalPrice(29400, model.getA_diskon()));
+                break;
+            case "8.6":
+                orderHolder.mPrice.setText(setTotalPrice(29750, model.getA_diskon()));
+                break;
+            case "8.7":
+                orderHolder.mPrice.setText(setTotalPrice(30100, model.getA_diskon()));
+                break;
+            case "8.8":
+                orderHolder.mPrice.setText(setTotalPrice(30450, model.getA_diskon()));
+                break;
+            case "8.9":
+                orderHolder.mPrice.setText(setTotalPrice(30800, model.getA_diskon()));
+                break;
+            //-9---------------
+            case "9":
+                orderHolder.mPrice.setText(setTotalPrice(31150, model.getA_diskon()));
+                break;
+            case "9.1":
+                orderHolder.mPrice.setText(setTotalPrice(31500, model.getA_diskon()));
+                break;
+            case "9.2":
+                orderHolder.mPrice.setText(setTotalPrice(31850, model.getA_diskon()));
+                break;
+            case "9.3":
+                orderHolder.mPrice.setText(setTotalPrice(32200, model.getA_diskon()));
+                break;
+            case "9.4":
+                orderHolder.mPrice.setText(setTotalPrice(32550, model.getA_diskon()));
+                break;
+            case "9.5":
+                orderHolder.mPrice.setText(setTotalPrice(32900, model.getA_diskon()));
+                break;
+            case "9.6":
+                orderHolder.mPrice.setText(setTotalPrice(33250, model.getA_diskon()));
+                break;
+            case "9.7":
+                orderHolder.mPrice.setText(setTotalPrice(33600, model.getA_diskon()));
+                break;
+            case "9.8":
+                orderHolder.mPrice.setText(setTotalPrice(33950, model.getA_diskon()));
+                break;
+            case "9.9":
+                orderHolder.mPrice.setText(setTotalPrice(34300, model.getA_diskon()));
+                break;
+        }
+
     }
 
     @NonNull
@@ -93,7 +377,7 @@ public class BiasaAdapter extends FirestoreRecyclerAdapter<BiasaModel, BiasaAdap
         return new Holder(view);
     }
 
-    class Holder extends RecyclerView.ViewHolder{
+    class Holder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.doneTime)
         TextView mDoneTimeTxt;
@@ -127,7 +411,7 @@ public class BiasaAdapter extends FirestoreRecyclerAdapter<BiasaModel, BiasaAdap
         public Holder(@NonNull View itemView) {
             super(itemView);
 
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -147,5 +431,22 @@ public class BiasaAdapter extends FirestoreRecyclerAdapter<BiasaModel, BiasaAdap
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
+    }
+
+    public String setTotalPrice(int price, String diskon) {
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
+        int priceInt;
+        int disokonInt = Integer.valueOf(diskon);
+        int hasil;
+        int totalPrice;
+        priceInt = price;
+        hasil = priceInt * disokonInt / 100;
+        totalPrice = priceInt - hasil;
+        return formatter.format(totalPrice);
+    }
+
+    public String setOriPrice(int price) {
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
+        return formatter.format(price);
     }
 }
