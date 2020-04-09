@@ -97,7 +97,7 @@ public class BiasaFragment extends Fragment {
             public void onBiasaItemClick(DocumentSnapshot documentSnapshot, int position) {
                 BiasaModel model = documentSnapshot.toObject(BiasaModel.class);
                 String id = documentSnapshot.getId();
-                Toast.makeText(getActivity(), "posisi : " + position + " id : " + id, Toast.LENGTH_LONG).show();
+               // Toast.makeText(getActivity(), "posisi : " + position + " id : " + id, Toast.LENGTH_LONG).show();
 
                 Intent orderDetailIntent = new Intent(getView().getContext(), DetailOrderActivity.class);
                 orderDetailIntent.putExtra("id", id);

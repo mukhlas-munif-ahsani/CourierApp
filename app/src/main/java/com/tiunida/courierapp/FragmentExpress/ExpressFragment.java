@@ -95,7 +95,7 @@ public class ExpressFragment extends Fragment {
             public void onExpressItemClick(DocumentSnapshot documentSnapshot, int position) {
                 ExpressModel model = documentSnapshot.toObject(ExpressModel.class);
                 String id = documentSnapshot.getId();
-                Toast.makeText(getActivity(), "posisi : " + position + " id : " + id, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), "posisi : " + position + " id : " + id, Toast.LENGTH_LONG).show();
 
                 Intent orderDetailIntent = new Intent(getView().getContext(), DetailOrderActivity.class);
                 orderDetailIntent.putExtra("id", id);

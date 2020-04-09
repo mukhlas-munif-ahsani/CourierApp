@@ -9,6 +9,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -23,20 +24,22 @@ import java.util.Map;
 public class DetailOrderRepository implements DetailOrderRepositoryMvp {
 
     private StorageReference storageReference;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore mFirestore;
     private String user_id;
+    String mCurrentId;
 
     public DetailOrderRepository() {
         storageReference = FirebaseStorage.getInstance().getReference();
-        firebaseAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         //user_id = firebaseAuth.getCurrentUser().getUid();
-        firebaseFirestore = FirebaseFirestore.getInstance();
+        mFirestore = FirebaseFirestore.getInstance();
+        mCurrentId = mAuth.getUid();
     }
 
     @Override
     public void getUserData() {
-        firebaseFirestore.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        mFirestore.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
@@ -61,7 +64,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
 
     @Override
     public void getOrdersData(String order_id) {
-        firebaseFirestore.collection("Orders").document(order_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        mFirestore.collection("Orders").document(order_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
@@ -154,10 +157,20 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         userMap2.put("a_weight", weight);
         userMap2.put("h_on_proses2", "1");
 
-        firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                postEvent(DetailOrderEvents.onUpdateDataSuccess);
+
+                Map<String, Object> notificationsMessage = new HashMap<>();
+                notificationsMessage.put("message", "Pakaian anda seudah masuk antrian cuci");
+                notificationsMessage.put("from", mCurrentId);
+
+                mFirestore.collection("Orders").document(order_id).collection("Notifications").add(notificationsMessage).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        postEvent(DetailOrderEvents.onUpdateDataSuccess);
+                    }
+                });
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -173,7 +186,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         Map<String, Object> userMap2 = new HashMap<>();
         userMap2.put("h_accepted2", "1");
 
-        firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 postEvent(DetailOrderEvents.onUpdateDataSuccess);
@@ -191,7 +204,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         Map<String, Object> userMap2 = new HashMap<>();
         userMap2.put("h_on_proses2", "1");
 
-        firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 postEvent(DetailOrderEvents.onUpdateDataSuccess);
@@ -209,7 +222,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         Map<String, Object> userMap2 = new HashMap<>();
         userMap2.put("h_done2", "1");
 
-        firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 postEvent(DetailOrderEvents.onUpdateDataSuccess);
@@ -227,7 +240,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         Map<String, Object> userMap2 = new HashMap<>();
         userMap2.put("h_paid2Confirm", "1");
 
-        firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 postEvent(DetailOrderEvents.onUpdateDataSuccess);
@@ -245,7 +258,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         Map<String, Object> userMap2 = new HashMap<>();
         userMap2.put("h_delivered2", "1");
 
-        firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 postEvent(DetailOrderEvents.onUpdateDataSuccess);

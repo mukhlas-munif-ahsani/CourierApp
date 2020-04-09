@@ -94,7 +94,7 @@ public class KilatFragment extends Fragment {
             public void onKilatItemClick(DocumentSnapshot documentSnapshot, int position) {
                 KilatModel model = documentSnapshot.toObject(KilatModel.class);
                 String id = documentSnapshot.getId();
-                Toast.makeText(getActivity(), "posisi : " + position + " id : " + id, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), "posisi : " + position + " id : " + id, Toast.LENGTH_LONG).show();
 
                 Intent orderDetailIntent = new Intent(getView().getContext(), DetailOrderActivity.class);
                 orderDetailIntent.putExtra("id", id);
